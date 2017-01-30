@@ -4,7 +4,7 @@
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-		"i18n":"ng-xi18n",
+    "i18n": "ng-xi18n",
     "e2e": "tsc && concurrently \"http-server -s\" \"protractor protractor.config.js\" --kill-others --success first",
     "lint": "tslint ./app/**/*.ts -t verbose",
     "lite": "lite-server",
@@ -38,6 +38,7 @@
     "@angular/platform-server": "^2.4.3",
     "@types/jasmine": "^2.5.36",
     "@types/node": "^6.0.46",
+    "bluebird": "^3.4.7",
     "bootstrap": "^3.3.7",
     "canonical-path": "0.0.2",
     "concurrently": "^3.1.0",
