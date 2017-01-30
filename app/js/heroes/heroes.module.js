@@ -10,20 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
-var router_1 = require('@angular/router');
+var heroes_routing_module_1 = require('./heroes-routing.module');
 var heroes_list_component_1 = require('./heroes-list.component');
-var HEROES_ROUTES = [{
-        path: 'heroeslist',
-        component: heroes_list_component_1.HeroesListComponent
-    }];
 var HeroesModule = (function () {
     function HeroesModule() {
     }
     HeroesModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, router_1.RouterModule.forRoot(HEROES_ROUTES)],
-            declarations: [heroes_list_component_1.HeroesListComponent],
-            exports: [router_1.RouterModule]
+            imports: [
+                common_1.CommonModule,
+                heroes_routing_module_1.HeroesRoutingModule
+            ],
+            declarations: [heroes_list_component_1.HeroesListComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], HeroesModule);

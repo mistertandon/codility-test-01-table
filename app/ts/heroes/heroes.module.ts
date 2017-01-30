@@ -5,25 +5,19 @@ import {
 import {
     CommonModule
 } from '@angular/common';
-
 import {
-    Routes,
-    RouterModule
-} from '@angular/router';
+    HeroesRoutingModule
+} from './heroes-routing.module';
 
 import {
     HeroesListComponent
 } from './heroes-list.component';
-
-const HEROES_ROUTES: Routes = [{
-    path: 'heroeslist',
-    component: HeroesListComponent
-}];
-
 @NgModule({
-    imports: [CommonModule, RouterModule.forRoot(HEROES_ROUTES)],
-		declarations: [HeroesListComponent],
-    exports: [RouterModule]
+    imports: [
+        CommonModule,
+        HeroesRoutingModule
+    ],
+    declarations: [HeroesListComponent]
 
 })
 export class HeroesModule {
