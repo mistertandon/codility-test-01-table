@@ -23,13 +23,16 @@ import {
 } from './crisis-center/crisis-center.component';
 
 const APP_ROUTE: Routes = [{
-        'path': 'heroeslist',
-        'component': HeroesListComponent
-    }, {
-        'path': 'crisiscenter',
-        'component': CrisisCenterComponent
-    }
-];
+    path: 'heroeslist',
+    component: HeroesListComponent
+}, {
+    path: 'crisiscenter',
+    component: CrisisCenterComponent
+}, {
+    path: '',
+    redirectTo: '/heroeslist',
+    pathMatch: 'full'
+}];
 
 @NgModule({
     imports: [
