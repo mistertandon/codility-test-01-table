@@ -18,6 +18,10 @@ import {
 } from './app.component';
 
 import {
+    HeroesModule as HeroesFeaturedModule
+} from './heroes/heroes.module';
+
+import {
     HeroesListComponent
 } from './heroes/heroes-list.component';
 
@@ -29,11 +33,11 @@ import {
     imports: [
         BrowserModule,
         FormsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HeroesFeaturedModule
     ],
     declarations: [
         AppComponent,
-        HeroesListComponent,
         CrisisCenterComponent
     ],
     bootstrap: [AppComponent]
