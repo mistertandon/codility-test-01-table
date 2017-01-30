@@ -1,6 +1,7 @@
 import {
     NgModule
 } from '@angular/core';
+
 import {
     BrowserModule
 } from '@angular/platform-browser';
@@ -18,7 +19,7 @@ import {
 } from './app.component';
 
 import {
-    HeroesModule as HeroesFeaturedModule
+    HeroesModule
 } from './heroes/heroes.module';
 
 import {
@@ -34,7 +35,7 @@ import {
         BrowserModule,
         FormsModule,
         AppRoutingModule,
-        HeroesFeaturedModule
+        HeroesModule
     ],
     declarations: [
         AppComponent,
