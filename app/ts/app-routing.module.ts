@@ -8,17 +8,10 @@ import {
 } from '@angular/router';
 
 import {
-    HeroesListComponent
-} from './heroes/heroes-list.component';
-
-import {
     CrisisCenterComponent
 } from './crisis-center/crisis-center.component';
 
 const APP_ROUTE: Routes = [{
-    path: 'heroeslist',
-    component: HeroesListComponent
-}, {
     path: 'crisiscenter',
     component: CrisisCenterComponent
 }, {
