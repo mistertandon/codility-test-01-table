@@ -24,4 +24,23 @@ export class HeroesService {
 
         return this.heroesName.map(heroInfo => new HeroClass(heroInfo[0], heroInfo[1]))
     }
+
+    public getHeroDetailById_HSM(heroId: number | string): any {
+
+       return Promise.resolve(this.heroesName).then(HeroInfoArr => {
+						
+						let HeroObject: any;
+
+            HeroInfoArr.forEach(function(currentVal) {
+
+                if (currentVal[0] == heroId) {
+
+                    HeroObject = new HeroClass(currentVal[0], currentVal[1]);
+                }
+
+            });
+
+							return HeroObject;
+        });
+    }
 }
