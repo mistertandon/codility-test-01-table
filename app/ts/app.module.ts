@@ -23,10 +23,6 @@ import {
 } from './heroes/heroes.module';
 
 import {
-    HeroesListComponent
-} from './heroes/heroes-list.component';
-
-import {
     CrisisCenterComponent
 } from './crisis-center/crisis-center.component';
 
@@ -34,8 +30,8 @@ import {
     imports: [
         BrowserModule,
         FormsModule,
-        AppRoutingModule,
-        HeroesModule
+        HeroesModule,
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,
