@@ -37,13 +37,19 @@ export class HeroDetailComponent implements OnInit {
             .switchMap(
                 (urlParams: Params) =>
                 this.HeroesService_S.getHeroDetailById_HSM(urlParams['id'])
-            ).subscribe((heroInfo: HeroClass) => {this.hero = heroInfo});
+            ).subscribe((heroInfo: HeroClass) => {
+                this.hero = heroInfo
+            });
 
     }
 
-		public renderHeroListComponent_HDCM(): void{
-			
-			this.Router_S.navigate(['/heroeslist'])
-		
-		}
+    public renderHeroListComponent_HDCM(): void {
+
+        let heroId: number | string = (this.hero) ? this.hero.id : null;
+
+        this.Router_S.navigate(['/heroeslist', {
+            id: heroId
+        }]);
+
+    }
 }

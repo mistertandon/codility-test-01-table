@@ -1,3 +1,7 @@
 .heroes-list-style {
     list-style: none;
 }
+
+.selectedHeroHlcv {
+    background-color: red;
+}
