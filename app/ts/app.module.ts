@@ -22,20 +22,21 @@ import {
     HeroesModule
 } from './heroes/heroes.module';
 
+
 import {
-    CrisisCenterComponent
-} from './crisis-center/crisis-center.component';
+    CrisisCenterModule
+} from './crisis-center/crisis-center.module';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         HeroesModule,
+        CrisisCenterModule,
         AppRoutingModule
     ],
     declarations: [
-        AppComponent,
-        CrisisCenterComponent
+        AppComponent
     ],
     bootstrap: [AppComponent]
 })
