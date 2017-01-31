@@ -40,4 +40,10 @@ export class HeroDetailComponent implements OnInit {
             ).subscribe((heroInfo: HeroClass) => {this.hero = heroInfo});
 
     }
+
+		public renderHeroListComponent_HDCM(): void{
+			
+			this.Router_S.navigate(['/heroeslist'])
+		
+		}
 }
