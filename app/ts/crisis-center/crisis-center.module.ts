@@ -11,6 +11,10 @@ import {
 } from './crisis-center-routing.module';
 
 import {
+    CrisisCenterService
+} from './crisis-center.service';
+
+import {
     CrisisCenterComponent
 } from './crisis-center.component';
 
@@ -19,6 +23,7 @@ import {
         CommonModule,
         CrisisCenterRoutingModule
     ],
+    providers: [CrisisCenterService],
     declarations: [CrisisCenterComponent],
 })
 export class CrisisCenterModule {}

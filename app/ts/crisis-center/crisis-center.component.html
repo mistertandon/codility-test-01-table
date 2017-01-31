@@ -1,2 +1,7 @@
 hello-from crsis center
+<div *ngIf="crisisList">
+    <li *ngFor="let crisisObj of crisisList">
+        {{crisisObj.name}}
+    </li>
+</div>
 <router-outlet></router-outlet>
