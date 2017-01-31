@@ -20,9 +20,10 @@ export class HeroesService {
         ['5', 'Tandon']
     ];
 
-    public getHeroesList_HSM(): any {
+    public getHeroesList_HSM(): Promise<HeroClass[]> {
 
-        return this.heroesName.map(heroInfo => new HeroClass(heroInfo[0], heroInfo[1]))
+        return Promise.resolve(this.heroesName.map(heroInfo => new HeroClass(heroInfo[0], heroInfo[1])));
+
     }
 
     public getHeroDetailById_HSM(heroId: number | string): any {

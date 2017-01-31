@@ -3,9 +3,16 @@ import {
     OnInit
 } from '@angular/core';
 
+import {Observable} from 'rxjs/Observable';
+
 import {
-    Router
+    ActivatedRoute,
+    Router,
+    RouterModule,
+    Params
 } from '@angular/router';
+
+import "rxjs/add/operator/switchMap";
 
 import {
     HeroClass
@@ -26,9 +33,14 @@ export class HeroesListComponent implements OnInit {
      * HEROES_S.
      *
      **/
-    public constructor(private HEROES_S: HeroesService, private Router_S: Router) {}
+    public constructor(private HEROES_S: HeroesService, private Router_S: Router, private ActivatedRoute_S: ActivatedRoute) {}
 
-    public heroesList: any;
+    public heroesList: Observable<HeroClass[]>;
+		
+		/**
+		 *	selectedHeroId: Id of the selected hero from heroes list.
+		 **/
+    public selectedHeroId: number;
 
     ngOnInit(): void {
         /**
@@ -36,17 +48,35 @@ export class HeroesListComponent implements OnInit {
          * heroesList variable;
          *
          **/
-        this.heroesList = this.HEROES_S.getHeroesList_HSM();
-    }
 
+        this.heroesList = this.ActivatedRoute_S.params.switchMap((paramsInfo: Params) => {
+
+					this.selectedHeroId = paramsInfo['id'];
+
+					return this.HEROES_S.getHeroesList_HSM();	
+
+				}	);
+
+    }
+		
+		/**
+		 * This function is used to navigate to hero-detail.component view.
+		 **/
     public renderHeroDetailInfo_HLCM(hero: HeroClass): void {
 
         this.Router_S.navigate(['/herodetail', hero.id]);
     }
+		
+		/**
+		 * This function is used to determine, is user made click on hero or not
+		 * recently on hero-list.component view..
+		 *
+		 **/
+		public isSelectedHero_HLCM(hero: HeroClass): boolean{
+			
+					return (hero.id == this.selectedHeroId)?true:false;
+			
+		}
 
 
 }
-
-
-
-
