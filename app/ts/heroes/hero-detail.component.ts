@@ -35,9 +35,12 @@ export class HeroDetailComponent implements OnInit {
 
         this.ActivatedRoute_S.params
             .switchMap(
+
                 (urlParams: Params) =>
                 this.HeroesService_S.getHeroDetailById_HSM(urlParams['id'])
+
             ).subscribe((heroInfo: HeroClass) => {
+
                 this.hero = heroInfo
             });
 
