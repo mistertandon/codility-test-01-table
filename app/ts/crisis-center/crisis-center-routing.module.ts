@@ -11,9 +11,17 @@ import {
     CrisisCenterComponent
 } from './crisis-center.component';
 
+import {
+    CrisisListComponent
+} from './crisis-list.component';
+
 const CRISIS_ROUTES: Routes = [{
     path: 'crisiscenter',
-    component: CrisisCenterComponent
+    component: CrisisCenterComponent,
+    children: [{
+        path: "",
+        component: CrisisListComponent
+    }] 
 }];
 
 @NgModule({

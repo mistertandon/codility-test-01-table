@@ -18,12 +18,16 @@ import {
     CrisisCenterComponent
 } from './crisis-center.component';
 
+import {
+    CrisisListComponent
+} from './crisis-list.component';
+
 @NgModule({
     imports: [
         CommonModule,
         CrisisCenterRoutingModule
     ],
     providers: [CrisisCenterService],
-    declarations: [CrisisCenterComponent],
+    declarations: [CrisisCenterComponent, CrisisListComponent],
 })
 export class CrisisCenterModule {}
