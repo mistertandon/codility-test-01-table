@@ -1,0 +1,20 @@
+.crisis-center-name {
+    list-style: none;
+    border-radius: 15px;
+    background-color: #F2F2F2;
+    height: 40px;
+    margin-top: 12px;
+    padding-left: 14px;
+    padding-top: 12px;
+    width: 90%;
+}
+
+.crisis-center-name:hover {
+    font-style: italic;
+    background-color: #E6E6E6;
+    padding-left: 16px;
+}
+
+.crisis-center-name-container {
+    margin-top: -15px;
+}

@@ -7,6 +7,10 @@ import {
 } from '@angular/common';
 
 import {
+    RouterModule
+} from '@angular/router';
+
+import {
     CrisisCenterRoutingModule
 } from './crisis-center-routing.module';
 
@@ -25,9 +29,20 @@ import {
 @NgModule({
     imports: [
         CommonModule,
-        CrisisCenterRoutingModule
+        CrisisCenterRoutingModule,
+        RouterModule
     ],
-    providers: [CrisisCenterService],
-    declarations: [CrisisCenterComponent, CrisisListComponent],
+    providers: [
+        CrisisCenterService
+    ],
+    declarations: [
+        CrisisCenterComponent,
+        CrisisListComponent
+    ],
+    exports: [RouterModule]
 })
 export class CrisisCenterModule {}
+
+
+
+
