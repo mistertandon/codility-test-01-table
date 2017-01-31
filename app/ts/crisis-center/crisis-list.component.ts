@@ -4,6 +4,10 @@ import {
 } from '@angular/core';
 
 import {
+    Router
+} from '@angular/router';
+
+import {
     CrisisCenterClass
 } from './../custom-classes/crisis-center.class';
 
@@ -24,7 +28,7 @@ export class CrisisListComponent implements OnInit {
      **/
     public crisisList: CrisisCenterClass[];
 
-    constructor(private CrisisCenterService_S: CrisisCenterService) {
+    constructor(private CrisisCenterService_S: CrisisCenterService, private Router_S: Router) {
 
     }
 
@@ -36,7 +40,15 @@ export class CrisisListComponent implements OnInit {
 
                     this.crisisList = crisisInfoArr;
                 });
-
     }
 
+    /**
+     * This funtion is used to redirect app to crisis center detail page.
+     *
+     */
+    public renderCrisisCenterDetail(crisisInfo: CrisisCenterClass): void {
+
+        this.Router_S.navigate(['/crisiscenter/detail']);
+
+    }
 }

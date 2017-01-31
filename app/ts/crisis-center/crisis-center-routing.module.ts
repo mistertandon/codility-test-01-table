@@ -19,6 +19,10 @@ import {
     CrisisCenterHomeComponent
 } from './crisis-center-home.component';
 
+import {
+    CrisisCenterDetailComponent
+} from './crisis-center-detail.component';
+
 const CRISIS_ROUTES: Routes = [{
     path: 'crisiscenter',
     component: CrisisCenterComponent,
@@ -28,6 +32,9 @@ const CRISIS_ROUTES: Routes = [{
         children: [{
             path: "",
             component: CrisisCenterHomeComponent
+        }, {
+            path: 'detail',
+            component: CrisisCenterDetailComponent
         }]
     }]
 }];
