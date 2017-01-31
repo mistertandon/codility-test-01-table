@@ -3,5 +3,22 @@
 }
 
 .selectedHeroHlcv {
-    background-color: red;
+    background-color: #FFB399 !important;
+}
+
+.heroList {
+    height: 40px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: -30px;
+    padding: 9px 20px;
+    background-color: #E0E0E0;
+    border-radius: 22px;
+    color: #474749;
+}
+
+.heroList:hover {
+    font-weight: bold;
+    font-style: italic;
+    background-color: #C7C7C7;
 }
