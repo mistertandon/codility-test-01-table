@@ -10,7 +10,7 @@
             <div class="panel panel-body">
 
                 <ul class="crisis-center-name-container">
-                    <li class="crisis-center-name" *ngFor="let crisisObj of crisisList">
+                    <li class="crisis-center-name" *ngFor="let crisisObj of crisisList" (click)="renderCrisisCenterDetail(crisisObj)" >
                         <span class="badge"> {{crisisObj.id}}</span> {{crisisObj.name}}
                     </li>
                 </ul>
