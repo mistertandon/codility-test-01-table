@@ -5,8 +5,14 @@ import {
 
 import {
     Router,
-    ActivatedRoute
+    ActivatedRoute,
+    Params
 } from '@angular/router';
+
+import {
+    Observable
+} from 'rxjs/Observable';
+import 'rxjs/add/operator/switchMap';
 
 import {
     CrisisCenterClass
@@ -29,7 +35,11 @@ export class CrisisListComponent implements OnInit {
      **/
     public crisisList: CrisisCenterClass[];
 
-    constructor(private CrisisCenterService_S: CrisisCenterService,
+    public selectedCrisisCenterId: number;
+
+    constructor(
+
+        private CrisisCenterService_S: CrisisCenterService,
         private Router_S: Router,
         private ActivatedRoute_S: ActivatedRoute
     ) {
@@ -38,12 +48,18 @@ export class CrisisListComponent implements OnInit {
 
     ngOnInit() {
 
-        this.CrisisCenterService_S.getCrisisCenterList()
-            .then(
-                (crisisInfoArr) => {
+        this.ActivatedRoute_S.params
+            .switchMap((params: Params) => {
 
-                    this.crisisList = crisisInfoArr;
-                });
+                this.selectedCrisisCenterId = +params['id'];
+
+                return this.CrisisCenterService_S.getCrisisCenterList();
+
+            }).subscribe((res: CrisisCenterClass[]) => {
+
+                this.crisisList = res;
+            });
+
     }
 
     /**
@@ -52,7 +68,26 @@ export class CrisisListComponent implements OnInit {
      */
     public renderCrisisCenterDetail(crisisInfo: CrisisCenterClass) {
 
-        this.Router_S.navigate([crisisInfo.id],{ relativeTo: this.ActivatedRoute_S });
+        this.Router_S.navigate([crisisInfo.id], {
+            relativeTo: this.ActivatedRoute_S
+        });
 
     }
+
+    /**
+     * This function is used to determine that currently passed crisis center id 
+     * recently	has been seleted or not.
+     *
+     **/
+    public isSelectedCrisisCenter_CLCM(CrisisCenterId: number): boolean {
+
+        let selectedCrisisCenterId: number = (this.selectedCrisisCenterId) ? this.selectedCrisisCenterId : null;
+
+        return CrisisCenterId === selectedCrisisCenterId ? true : false;
+
+    }
+
+
+
+
 }

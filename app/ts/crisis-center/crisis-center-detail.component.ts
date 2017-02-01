@@ -38,4 +38,18 @@ export class CrisisCenterDetailComponent implements OnInit {
 
                 });
     }
+
+    /**
+     * This function is used to render crisis-center-detail.component view page, when user click on
+     * <Go Back> button on crisis-center-detail.component view page.
+     *
+     */
+    public renderHeroListComponent_HLCM() {
+
+        this.Router_S.navigate(['/crisiscenter', {
+            id: this.crisisCenterDetail.id
+        }]);
+    }
+
+
 }
