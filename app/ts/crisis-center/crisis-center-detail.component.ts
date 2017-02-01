@@ -46,10 +46,23 @@ export class CrisisCenterDetailComponent implements OnInit {
      */
     public renderHeroListComponent_HLCM() {
 
-        this.Router_S.navigate(['/crisiscenter', {
-            id: this.crisisCenterDetail.id
-        }]);
-    }
+        /**
+				 * Alternate way to navigate to crisis-list.component view page.
+				 *
+				 *
+		        this.Router_S.navigate(['/crisiscenter', {
 
+    	        id: this.crisisCenterDetail.id
+      		  }]);
+
+			  *
+				**/
+
+        this.Router_S.navigate(['../', {
+            id: this.crisisCenterDetail.id
+        }], {
+            relativeTo: this.ActivatedRoute_S
+        });
+    } 
 
 }
