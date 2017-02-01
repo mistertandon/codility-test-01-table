@@ -8,6 +8,10 @@ import {
 } from '@angular/router';
 
 import {
+    CrisisCenterDetailResolverService
+} from './crisis-center-detail.resolver.service';
+
+import {
     CrisisCenterComponent
 } from './crisis-center.component';
 
@@ -26,12 +30,17 @@ import {
 const CRISIS_ROUTES: Routes = [{
     path: 'crisiscenter',
     component: CrisisCenterComponent,
+
     children: [{
         path: "",
         component: CrisisListComponent,
+
         children: [{
             path: ":id",
-            component: CrisisCenterDetailComponent
+            component: CrisisCenterDetailComponent,
+            resolve: {
+                crisis: CrisisCenterDetailResolverService
+            }
         }, {
             path: "",
             component: CrisisCenterHomeComponent
@@ -41,7 +50,10 @@ const CRISIS_ROUTES: Routes = [{
 
 @NgModule({
     imports: [RouterModule.forChild(CRISIS_ROUTES)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [
+        CrisisCenterDetailResolverService
+    ]
 })
 export class CrisisCenterRoutingModule {
 
