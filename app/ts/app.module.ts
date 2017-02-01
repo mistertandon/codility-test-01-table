@@ -22,10 +22,13 @@ import {
     HeroesModule
 } from './heroes/heroes.module';
 
-
 import {
     CrisisCenterModule
 } from './crisis-center/crisis-center.module';
+
+import {
+    ContactMessageComponent
+} from './contact/contact-message.component';
 
 @NgModule({
     imports: [
@@ -36,7 +39,7 @@ import {
         AppRoutingModule
     ],
     declarations: [
-        AppComponent
+        AppComponent, ContactMessageComponent
     ],
     bootstrap: [AppComponent]
 })

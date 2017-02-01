@@ -8,12 +8,13 @@ import {
 } from '@angular/router';
 
 import {
-    CrisisCenterComponent
-} from './crisis-center/crisis-center.component';
+    ContactMessageComponent
+} from './contact/contact-message.component';
 
 const APP_ROUTE: Routes = [{
-    path: 'crisiscenter',
-    component: CrisisCenterComponent
+    path: 'contact',
+    component: ContactMessageComponent,
+    outlet: 'popup'
 }, {
     path: '',
     redirectTo: '/heroeslist',
