@@ -7,6 +7,10 @@ import {
 } from '@angular/common';
 
 import {
+    FormsModule
+} from '@angular/forms';
+
+import {
     RouterModule
 } from '@angular/router';
 
@@ -37,6 +41,7 @@ import {
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         CrisisCenterRoutingModule,
         RouterModule
     ],

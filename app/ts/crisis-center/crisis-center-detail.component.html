@@ -1,4 +1,15 @@
-hello from crisis-center-detail.component
+<div class="panel panel-default">
 
-{{editCrisisCenterName}}
+    <div class="panel panel-heading">
+        {{editCrisisCenterName}}
+    </div>
+    <div class="panel panel-body">
+        <div class="form-group">
+            <input class="form-control" [(ngModel)]="editCrisisCenterName">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-sm" (click)="renderHeroListComponent_HLCM()">Save</button>
+        </div>
+    </div>
 
+</div>

@@ -18,3 +18,14 @@
 .crisis-center-name-container {
     margin-top: -15px;
 }
+
+.selectedCrisisCenter {
+    list-style: none;
+    border-radius: 15px;
+    background-color: #FF99E6;
+    height: 40px;
+    margin-top: 12px;
+    padding-left: 14px;
+    padding-top: 12px;
+    width: 90%;
+}
