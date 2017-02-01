@@ -30,11 +30,11 @@ const CRISIS_ROUTES: Routes = [{
         path: "",
         component: CrisisListComponent,
         children: [{
+            path: ":id",
+            component: CrisisCenterDetailComponent
+        }, {
             path: "",
             component: CrisisCenterHomeComponent
-        }, {
-            path: 'detail',
-            component: CrisisCenterDetailComponent
         }]
     }]
 }];

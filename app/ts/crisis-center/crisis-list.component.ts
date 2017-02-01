@@ -4,7 +4,8 @@ import {
 } from '@angular/core';
 
 import {
-    Router
+    Router,
+    ActivatedRoute
 } from '@angular/router';
 
 import {
@@ -28,7 +29,10 @@ export class CrisisListComponent implements OnInit {
      **/
     public crisisList: CrisisCenterClass[];
 
-    constructor(private CrisisCenterService_S: CrisisCenterService, private Router_S: Router) {
+    constructor(private CrisisCenterService_S: CrisisCenterService,
+        private Router_S: Router,
+        private ActivatedRoute_S: ActivatedRoute
+    ) {
 
     }
 
@@ -46,9 +50,9 @@ export class CrisisListComponent implements OnInit {
      * This funtion is used to redirect app to crisis center detail page.
      *
      */
-    public renderCrisisCenterDetail(crisisInfo: CrisisCenterClass): void {
+    public renderCrisisCenterDetail(crisisInfo: CrisisCenterClass) {
 
-        this.Router_S.navigate(['/crisiscenter/detail']);
+        this.Router_S.navigate([crisisInfo.id],{ relativeTo: this.ActivatedRoute_S });
 
     }
 }
