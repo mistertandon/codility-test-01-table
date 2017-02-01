@@ -22,13 +22,25 @@ export class CrisisCenterService {
 
     }
 
-		/**
-		 * This function is used to retrieve crisis list.
-		 *
-		 **/
+    /**
+     * This function is used to retrieve crisis list.
+     *
+     **/
     public getCrisisCenterList(): Promise < CrisisCenterClass[] > {
 
         return Promise.resolve(this.crisisInfoRef);
 
+    }
+
+    public getCrisisCenterDetail_CCSM(crisisCenterId: number): Promise<CrisisCenterClass> {
+
+        return this.getCrisisCenterList().then((CrisisCenterInfoArr: CrisisCenterClass[]): CrisisCenterClass => {
+
+            return CrisisCenterInfoArr.find((CrisisCenterInfoObj) => {
+
+             return CrisisCenterInfoObj.id == crisisCenterId
+
+            })
+        });
     }
 }
