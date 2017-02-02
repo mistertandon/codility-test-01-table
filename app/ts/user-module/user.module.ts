@@ -7,26 +7,19 @@ import {
 } from '@angular/common';
 
 import {
-    Routes,
-    RouterModule
-} from '@angular/router';
+    UserRoutingModule
+} from './user-routing.module';
 
 import {
     UserComponent
 } from './user.component';
 
-const USERS_ROUTES: Routes = [{
-    path: 'users',
-    component: UserComponent
-}];
-
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forChild(USERS_ROUTES)
+        UserRoutingModule
     ],
     declarations: [UserComponent],
-    exports: [RouterModule]
 
 })
 export class UserModule {}
