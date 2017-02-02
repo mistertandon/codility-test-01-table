@@ -15,6 +15,10 @@ import {
 } from './app-routing.module';
 
 import {
+    PostModule
+} from './post-module/post.module';
+
+import {
     AppComponent
 } from './app.component';
 
@@ -36,6 +40,7 @@ import {
         FormsModule,
         HeroesModule,
         CrisisCenterModule,
+        PostModule,
         AppRoutingModule
     ],
     declarations: [
