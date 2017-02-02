@@ -12,21 +12,21 @@ import {
 } from '@angular/router';
 
 import {
-    PostComponent
-} from './post.component';
+    UserComponent
+} from './user.component';
 
-const POSTS_ROUTES: Routes = [{
-    path: 'posts',
-    component: PostComponent
+const USERS_ROUTES: Routes = [{
+    path: 'users',
+    component: UserComponent
 }];
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forChild(POSTS_ROUTES)
+        RouterModule.forChild(USERS_ROUTES)
     ],
-    declarations: [PostComponent],
+    declarations: [UserComponent],
     exports: [RouterModule]
 
 })
-export class PostModule {}
+export class UserModule {}

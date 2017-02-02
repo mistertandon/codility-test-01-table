@@ -15,16 +15,16 @@ import {
 } from './app-routing.module';
 
 import {
-    PostModule
-} from './post-module/post.module';
-
-import {
     AppComponent
 } from './app.component';
 
 import {
     HeroesModule
 } from './heroes/heroes.module';
+
+import {
+    UserModule
+} from './user-module/user.module';
 
 import {
     CrisisCenterModule
@@ -40,7 +40,7 @@ import {
         FormsModule,
         HeroesModule,
         CrisisCenterModule,
-        PostModule,
+        UserModule,
         AppRoutingModule
     ],
     declarations: [
