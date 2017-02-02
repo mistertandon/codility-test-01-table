@@ -11,9 +11,19 @@ import {
     UserComponent
 } from './user.component';
 
+import {
+    UserAddComponent
+} from './user-add.component';
+
 const USERS_ROUTES: Routes = [{
-    path: 'users',
-    component: UserComponent
+    path: 'userslist',
+    component: UserComponent,
+
+    children: [{
+        path: 'adduser',
+        component: UserAddComponent
+    }]
+
 }];
 
 @NgModule({

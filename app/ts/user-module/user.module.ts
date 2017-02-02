@@ -12,6 +12,10 @@ import {
 } from '@angular/http';
 
 import {
+    ReactiveFormsModule
+} from '@angular/forms';
+
+import {
     UserRoutingModule
 } from './user-routing.module';
 
@@ -23,14 +27,22 @@ import {
     UserComponent
 } from './user.component';
 
+import {
+    UserAddComponent
+} from './user-add.component';
+
 @NgModule({
     imports: [
         CommonModule,
         HttpModule,
         JsonpModule,
+        ReactiveFormsModule,
         UserRoutingModule
     ],
-    declarations: [UserComponent],
+    declarations: [
+        UserComponent,
+        UserAddComponent
+    ],
     providers: [
         UserService
     ]

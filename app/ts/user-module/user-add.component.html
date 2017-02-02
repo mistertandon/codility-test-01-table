@@ -1,0 +1,45 @@
+<!-- hello from user-add
+ <a [routerLink]="['../']">here</a>-->
+<div class="panel panel-default">
+
+    <div class="panel panel-heading">
+        Add User
+    </div>
+
+    <div class="panel panel-body">
+        <form [formGroup]="userAddForm">
+
+            <div class="form-group">
+								<label for="name">Username :</label>
+                <input type="text" id="name" class="form-control" formControlName="name">
+
+                <div class="alert alert-danger" *ngIf="formValidationFields.name">
+                    {{formValidationFields.name}}
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+								<label for="job">Job :</label>
+                <input type="text" id="job" class="form-control" formControlName="job">
+
+                <div class="alert alert-danger" *ngIf="formValidationFields.job">
+                    {{formValidationFields.job}}
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+							<button id="submit-form" class="btn btn-primary btn-sm btn-block"
+								[disabled]="userAddForm.invalid || userAddForm.pristine"
+								(click)="postUserInfo()">
+								Save
+							</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
