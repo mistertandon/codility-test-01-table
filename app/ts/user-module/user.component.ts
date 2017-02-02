@@ -33,7 +33,7 @@ export class UserComponent implements OnInit {
     public getUsersList(): void {
 
         this.UserService_S.getUsersList_USM().subscribe(userListArr => {
-console.log(this.users);
+
             this.users = userListArr;
         });
 
