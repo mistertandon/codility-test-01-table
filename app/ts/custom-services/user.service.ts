@@ -20,6 +20,10 @@ import {
     Subscription
 } from 'rxjs/Subscription';
 
+import {
+    UserEditFormObject_I
+} from './../custom-interfaces/user-class.interface';
+
 @Injectable()
 export class UserService {
 
@@ -44,7 +48,7 @@ export class UserService {
      */
     public extractData(res: Response) {
 
-				console.log(res);
+        console.log(res);
         let body = res.json();
 
         return body.data || {}
@@ -75,5 +79,30 @@ export class UserService {
             .map(this.extractData);
 
     }
+
+
+    public getUserDetail_USM(userId: number): Observable < UserEditFormObject_I > {
+
+        let requestOptions: RequestOptions;
+
+        requestOptions = new RequestOptions({
+
+            method: RequestMethod.Get,
+            url: 'https://reqres.in/api/users/2'
+        });
+
+        return this.Http_S.get(requestOptions.url, requestOptions)
+            .map(this.extractData);
+    }
+
+
+
+
+
+
+
+
+
+
 
 }
