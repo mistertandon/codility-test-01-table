@@ -31,6 +31,10 @@ import {
     UserAddComponent
 } from './user-add.component';
 
+import {
+    UserEditComponent
+} from './user-edit.component';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -41,7 +45,8 @@ import {
     ],
     declarations: [
         UserComponent,
-        UserAddComponent
+        UserAddComponent,
+        UserEditComponent
     ],
     providers: [
         UserService
