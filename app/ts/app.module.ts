@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+import { LoginModule } from './login/login.module';
+
 import { HeroesModule } from './heroes/heroes.module';
 
 import { UserModule } from './user-module/user.module';
@@ -22,6 +24,7 @@ import { AdminModule } from './admin/admin.module';
     imports: [
         BrowserModule,
         FormsModule,
+        LoginModule,
         HeroesModule,
         CrisisCenterModule,
         UserModule,
