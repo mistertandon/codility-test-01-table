@@ -1,15 +1,8 @@
-import {
-    NgModule
-} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {
-    Routes,
-    RouterModule
-} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-import {
-    ContactMessageComponent
-} from './contact/contact-message.component';
+import { ContactMessageComponent } from './contact/contact-message.component';
 
 const APP_ROUTE: Routes = [{
     path: 'contact',
