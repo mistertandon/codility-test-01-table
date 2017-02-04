@@ -8,6 +8,8 @@ import { AdminComponent } from './admin.component';
 
 import { ManageHeroesComponent } from './manage-heroes.component';
 
+import {ManageCrisisComponent} from './manage-crisis.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import { ManageHeroesComponent } from './manage-heroes.component';
   ],
   declarations: [
     AdminComponent,
-    ManageHeroesComponent
+    ManageHeroesComponent,
+    ManageCrisisComponent
   ]
 })
 export class AdminModule {
