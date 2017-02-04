@@ -1,1 +1,44 @@
-hello from user-edit.component
+<div class="panel panel-default">
+
+    <div class="panel panel-heading">
+        Edit User
+    </div>
+
+    <div class="panel panel-body">
+        <form [formGroup]="userEditForm">
+
+            <div class="form-group">
+								<label for="name">Username :</label>
+                <input type="text" id="name" class="form-control" formControlName="name">
+                <input type="hidden" formControlName="id">
+
+                <div class="alert alert-danger" *ngIf="formValidationFields.name">
+                    {{formValidationFields.name}}
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+								<label for="job">Job :</label>
+                <input type="text" id="job" class="form-control" formControlName="job">
+
+                <div class="alert alert-danger" *ngIf="formValidationFields.job">
+                    {{formValidationFields.job}}
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+							<button id="submit-form" class="btn btn-primary btn-sm btn-block"
+								[disabled]="userEditForm.invalid || userEditForm.pristine"
+								(click)="updateUserInfo()">
+								Save
+							</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

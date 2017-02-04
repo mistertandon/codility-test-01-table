@@ -1,7 +1,8 @@
 export class UserClassInterface {
-
+    id ? : number | string;
     name: string;
     job: string;
+    updatedAt ? : string;
 
 }
 

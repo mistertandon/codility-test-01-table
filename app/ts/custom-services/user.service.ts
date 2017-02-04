@@ -21,6 +21,7 @@ import {
 } from 'rxjs/Subscription';
 
 import {
+    UserClassInterface,
     UserEditFormObject_I
 } from './../custom-interfaces/user-class.interface';
 
@@ -88,15 +89,31 @@ export class UserService {
         requestOptions = new RequestOptions({
 
             method: RequestMethod.Get,
-            url: 'https://reqres.in/api/users/2'
+            url: `https://reqres.in/api/users/${ userId }`
         });
 
         return this.Http_S.get(requestOptions.url, requestOptions)
             .map(this.extractData);
     }
 
+		/**
+     * This function is used to update user info by posting user
+     * information to RestAPI.
+     */
+    public postUserDetail_USM(userInfo: UserClassInterface): Observable < Response > {
 
+        let requestOptions: RequestOptions;
 
+        requestOptions = new RequestOptions({
+
+            method: RequestMethod.Put,
+            //url: `https://reqres.in/api/users/${ userInfo.id }`
+            url: `https://reqres.in/api/users/2`
+        });
+console.log(userInfo);
+        return this.Http_S.put(requestOptions.url, userInfo, requestOptions)
+            .map(this.extractData);
+    }
 
 
 
