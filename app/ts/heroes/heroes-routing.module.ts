@@ -1,19 +1,10 @@
-import {
-    NgModule
-} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {
-    Routes,
-    RouterModule
-} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-import {
-    HeroesListComponent
-} from './heroes-list.component';
+import { HeroesListComponent } from './heroes-list.component';
 
-import {
-    HeroDetailComponent
-} from './hero-detail.component';
+import { HeroDetailComponent } from './hero-detail.component';
 
 const HEROES_ROUTES: Routes = [{
     path: 'heroeslist',
@@ -28,4 +19,4 @@ const HEROES_ROUTES: Routes = [{
     exports: [RouterModule]
 
 })
-export class HeroesRoutingModule {}
+export class HeroesRoutingModule { }
