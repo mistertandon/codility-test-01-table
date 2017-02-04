@@ -8,10 +8,13 @@ import { ManageHeroesComponent } from './manage-heroes.component';
 
 import { ManageCrisisComponent } from './manage-crisis.component';
 
+import { AdminRoutesGaurdService } from './../custom-services/admin-routes-gaurd.service';
+
 const ADMIN_ROUTES: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [AdminRoutesGaurdService],
     children: [
       {
         path: 'heroes',
@@ -22,13 +25,13 @@ const ADMIN_ROUTES: Routes = [
         component: ManageCrisisComponent
       }
     ]
-  },
-
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(ADMIN_ROUTES)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AdminRoutesGaurdService]
 })
 export class AdminRoutingModule {
 

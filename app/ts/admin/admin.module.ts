@@ -8,7 +8,7 @@ import { AdminComponent } from './admin.component';
 
 import { ManageHeroesComponent } from './manage-heroes.component';
 
-import {ManageCrisisComponent} from './manage-crisis.component';
+import { ManageCrisisComponent } from './manage-crisis.component';
 
 @NgModule({
   imports: [
