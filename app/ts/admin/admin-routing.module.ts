@@ -4,11 +4,20 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminComponent } from './admin.component';
 
+import { ManageHeroesComponent } from './manage-heroes.component';
+
 const ADMIN_ROUTES: Routes = [
   {
     path: 'admin',
-    component: AdminComponent
-  }
+    component: AdminComponent,
+    children: [
+      {
+        path: 'heroes',
+        component: ManageHeroesComponent
+      }
+    ]
+  },
+
 ];
 
 @NgModule({
