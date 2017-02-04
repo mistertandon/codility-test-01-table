@@ -6,6 +6,8 @@ import { AdminComponent } from './admin.component';
 
 import { ManageHeroesComponent } from './manage-heroes.component';
 
+import { ManageCrisisComponent } from './manage-crisis.component';
+
 const ADMIN_ROUTES: Routes = [
   {
     path: 'admin',
@@ -14,6 +16,10 @@ const ADMIN_ROUTES: Routes = [
       {
         path: 'heroes',
         component: ManageHeroesComponent
+      },
+      {
+        path: 'crisis',
+        component: ManageCrisisComponent
       }
     ]
   },
