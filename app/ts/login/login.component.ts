@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { LoginService } from './../custom-services/login.service';
 
 import { loginForm_I } from './../custom-interfaces/login.interface';
 
@@ -30,7 +34,12 @@ export class LoginComponent implements OnInit {
       'required': 'Enter Password'
     }
   }
-  public constructor(private FormBuilder_S: FormBuilder) {
+
+  public constructor(
+    private Router_S: Router,
+    private ActivatedRoute_S: ActivatedRoute,
+    private FormBuilder_S: FormBuilder,
+    private LoginService_S: LoginService) {
 
   }
   ngOnInit(): void {
@@ -80,9 +89,22 @@ export class LoginComponent implements OnInit {
         }
       }
     }
-
-
   }
 
+  public makeLogin(): void {
+
+    this.LoginService_S.login().subscribe((currentLoginStatus: boolean) => {
+
+      if (this.LoginService_S.checkUserLoginStatus()) {
+
+        this.Router_S.navigate(['/admin']);
+
+      } else {
+
+        this.Router_S.navigate(['login']);
+      }
+
+    });
+  }
 
 }
