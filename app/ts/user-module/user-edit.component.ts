@@ -135,7 +135,6 @@ export class UserEditComponent implements OnInit {
         this.UserService_S.postUserDetail_USM(this.userEditForm.value)
             .subscribe((responseData: Response) => {
 
-                console.log(responseData);
             });
     }
 

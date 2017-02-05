@@ -29,7 +29,7 @@ const ADMIN_ROUTES: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(ADMIN_ROUTES)],
+  imports: [RouterModule.forChild(ADMIN_ROUTES)],
   exports: [RouterModule],
   providers: [AdminRoutesGaurdService]
 })
