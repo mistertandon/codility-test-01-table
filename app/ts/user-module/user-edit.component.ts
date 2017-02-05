@@ -1,36 +1,16 @@
-import {
-    Component,
-    OnInit
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {
-    Response
-} from '@angular/http';
+import { Response } from '@angular/http';
 
-import {
-    ActivatedRoute
-} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
-import {
-    FormBuilder,
-    FormGroup,
-    Validators
-}
-from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import {
-    UserClass_I,
-    userAddFormFields
-} from './../custom-interfaces/user.interfaces';
+import { UserClass_I, userAddFormFields } from './../custom-interfaces/user.interfaces';
 
-import {
-    UserClassInterface,
-    UserEditFormObject_I
-} from './../custom-interfaces/user-class.interface';
+import { UserClassInterface, UserEditFormObject_I } from './../custom-interfaces/user-class.interface';
 
-import {
-    UserService
-} from './../custom-services/user.service';
+import { UserService } from './../custom-services/user.service';
 
 @Component({
     templateUrl: "app/ts/user-module/user-edit.component.html",
@@ -67,7 +47,7 @@ export class UserEditComponent implements OnInit {
         private FormBuilder_S: FormBuilder,
         private ActivatedRoute_S: ActivatedRoute,
         private UserService_S: UserService
-    ) {}
+    ) { }
 
     ngOnInit(): void {
 
