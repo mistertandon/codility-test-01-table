@@ -8,7 +8,7 @@
         <form [formGroup]="userEditForm">
 
             <div class="form-group">
-								<label for="name">Username :</label>
+                <label for="name">Username :</label>
                 <input type="text" id="name" class="form-control" formControlName="name">
                 <input type="hidden" formControlName="id">
 
@@ -20,7 +20,7 @@
 
             <div class="form-group">
 
-								<label for="job">Job :</label>
+                <label for="job">Job :</label>
                 <input type="text" id="job" class="form-control" formControlName="job">
 
                 <div class="alert alert-danger" *ngIf="formValidationFields.job">
@@ -31,11 +31,10 @@
 
 
             <div class="form-group">
-							<button id="submit-form" class="btn btn-primary btn-sm btn-block"
-								[disabled]="userEditForm.invalid || userEditForm.pristine"
-								(click)="updateUserInfo()">
-								Save
-							</button>
+                <button id="submit-form" class="btn btn-primary btn-sm btn-block" [disabled]="userEditForm.invalid || userEditForm.pristine"
+                    (click)="updateUserInfo()">
+                    Save
+                    </button>
             </div>
 
         </form>
