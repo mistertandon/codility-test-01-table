@@ -23,7 +23,6 @@ export class HeroesService {
     public getHeroesList_HSM(): Promise<HeroClass[]> {
 
         return Promise.resolve(this.heroesName.map(heroInfo => new HeroClass(heroInfo[0], heroInfo[1])));
-
     }
 
     public getHeroDetailById_HSM(heroId: number | string): any {

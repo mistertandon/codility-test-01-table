@@ -1,0 +1,13 @@
+li.heroName{
+
+	list-style:none;
+	background-color: #E6E6E6;
+	margin-bottom: 5px;
+	padding-left: 10px;
+}
+
+li.heroName:hover{
+	
+	background-color: #E6E6E6;
+	font-style:italic;
+}
