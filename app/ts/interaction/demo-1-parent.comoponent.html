@@ -8,6 +8,6 @@
 		</ul>
 	</div>
 	<div class="col-md-4 col-md-offset-1" *ngIf="selectedHero">
-		<demo-1-child [heroRef]="selectedHero"></demo-1-child>
+		<demo-1-child [heroId]="selectedHero.id" [heroRef]="selectedHero"></demo-1-child>
 	</div>
 </div>

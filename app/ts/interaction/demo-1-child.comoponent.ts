@@ -8,9 +8,16 @@ import { HeroClass } from './../custom-classes/hero.class';
 })
 export class Demo1ChildComoponent {
 
+	public _heroId: number;
 	@Input()
 	public heroRef: HeroClass;
-	public constructor(){
+
+	@Input()
+	set heroId(heroIdParam: number) {
+
+		this._heroId = heroIdParam;
+	}
+	public constructor() {
 
 	}
 
