@@ -1,7 +1,13 @@
 <div class="row">
 
 	<div class="col-md-5 col-md-offset-1">
-		<div class="col-md-10">
+
+		<div class="col-md-11 verionConrol">
+			<button class="btn btn-success" (click)="increaseMajorVersion()">Major Version</button>
+			<button class="btn btn-info" (click)="increaseMinorVersion()">Minor Version</button>
+		</div>
+
+		<div class="col-md-11">
 			<ul class="demo1Ul">
 				<li class="heroName" *ngFor="let hero of heroes" (click)="selectHero(hero)">
 					{{hero.name}}
@@ -14,8 +20,8 @@
 		<div class="col-md-10 col-md-offset-1" *ngIf="selectedHero">
 			<demo-1-child [heroId]="selectedHero.id" [heroRef]="selectedHero"></demo-1-child>
 		</div>
-		<div class="col-md-10 col-md-offset-1">
-			<demo-2-child [major] ="25" [minor]="34"></demo-2-child>
+		<div class="col-md-11">
+			<demo-2-child [major]="majorVersion" [minor]="minorVersion"></demo-2-child>
 		</div>
 	</div>
 

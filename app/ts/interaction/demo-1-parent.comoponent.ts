@@ -11,6 +11,17 @@ export class Demo1ParentComoponent implements OnInit {
 	 * `selectedHero` used to store selected hero info listed on heroes list.
 	 */
 	public selectedHero: HeroClass;
+
+	/**
+	 * `majorVersion` contains major version information.
+	 */
+	public majorVersion: number = 0;
+
+	/**
+	 * `minorVersion` contains major version information.
+	 */
+	public minorVersion: number = 0;
+
 	/**
 	 * `heroes` contains all heroes information in a array.
 	 */
@@ -34,6 +45,24 @@ export class Demo1ParentComoponent implements OnInit {
 
 		this.selectedHero = heroDetail;
 	}
+
+	/**
+	 * `increaseMajorVersion` function make increment of `majorVersion`by one.
+	 */
+	increaseMajorVersion(): void {
+
+		this.majorVersion++;
+		this.minorVersion = 0;
+	}
+
+	/**
+	 * `increaseMinorVersion` function make increment of `minorVersion`by one.
+	 */
+	increaseMinorVersion(): void {
+
+		this.minorVersion++;
+	}
+
 }
 
 

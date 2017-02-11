@@ -1,1 +1,22 @@
-major version : {{major}} minor version : {{minor}}
+<table class="table table-hover table-stripped">
+
+	<thead>
+		<tr>
+			<th>Major Version</th>
+			<td>{{major}}</td>
+		</tr>
+		<tr>
+			<th>Minor Version</th>
+			<td>{{minor}}</td>
+		</tr>
+	</thead>
+
+	<tbody>
+
+		<tr *ngFor="let logMessage of logs">
+			<th colspan="2">{{logMessage}}</th>
+		</tr>
+
+	</tbody>
+
+</table>

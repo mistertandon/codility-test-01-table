@@ -1,5 +1,4 @@
 li.heroName{
-
 	list-style:none;
 	background-color: #E6E6E6;
 	height: 35px;
@@ -10,8 +9,12 @@ li.heroName{
 }
 
 li.heroName:hover{
-	
 	background-color: #CCCCCC;
 	font-style:italic;
 	cursor:all-scroll;
+}
+
+.verionConrol{
+	margin-bottom:25px;
+	padding-left:60px;
 }
