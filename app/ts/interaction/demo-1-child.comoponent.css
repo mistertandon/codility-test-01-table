@@ -1,0 +1,13 @@
+.hero-info-container {
+    background-color:#D9CCFF;
+    height: 100px;
+    padding-top: 34px;
+    padding-left: 86px;
+    border-radius: 35px;
+    border-style: groove;
+    border-width: 2px;
+}
+.hero-info-container:hover {
+    background-color:#C6B3FF;
+		font-style:italic;
+}
