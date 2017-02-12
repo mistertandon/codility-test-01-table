@@ -7,6 +7,15 @@ import { HeroesService } from './../custom-services/heroes.service';
 	styleUrls: ["app/ts/interaction/demo-1-parent.comoponent.css"]
 })
 export class Demo1ParentComoponent implements OnInit {
+
+	/**
+	 * `agreed` contains total votes in favor.
+	 */
+	public agreed: number = 0;
+	/**
+	 * `disagreed` contains total votes not in favor.
+	 */
+	public disagreed: number = 0;
 	/**
 	 * `selectedHero` used to store selected hero info listed on heroes list.
 	 */
@@ -63,6 +72,13 @@ export class Demo1ParentComoponent implements OnInit {
 		this.minorVersion++;
 	}
 
+	/**
+	 * `onVotedHandleParent` handle action result happend in child component.
+	 */
+	onVotedHandleParent(result: boolean) {
+
+		(result) ? this.agreed++ : this.disagreed++;
+	}
 }
 
 

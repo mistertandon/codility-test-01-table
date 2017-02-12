@@ -2,18 +2,42 @@
 
 	<div class="col-md-5 col-md-offset-1">
 
-		<div class="col-md-11 verionConrol">
+		<div class="col-md-11 verionConrol text-center">
 			<button class="btn btn-success" (click)="increaseMajorVersion()">Major Version</button>
 			<button class="btn btn-info" (click)="increaseMinorVersion()">Minor Version</button>
 		</div>
 
+		<div class="col-md-11 verionConrol">
+
+			<div class="col-md-5 col-md-offset-1 text-center">
+				<span class="badge">{{agreed}}</span>
+				<span class="text-success text-capitalize"> Agreed </span>
+			</div>
+
+			<div class="col-md-5 col-md-offset-1 text-center">
+				<span class="badge">{{disagreed}}</span>
+				<span class="text-danger text-capitalize">Disagreed</span>
+			</div>
+
+		</div>
+
+		<div class="col-md-11 col-md-offset-1">
+		</div>
+		<div class="col-md-11 col-md-offset-1" *ngFor="let hero of heroes">
+			<span class="badge heroName" (click)="selectHero(hero)">{{hero.name}}</span>
+
+			<demo-3-child (onVoted)="onVotedHandleParent($event)"></demo-3-child>
+		</div>
+		<!--
 		<div class="col-md-11">
 			<ul class="demo1Ul">
 				<li class="heroName" *ngFor="let hero of heroes" (click)="selectHero(hero)">
 					{{hero.name}}
+					<demo-3-child></demo-3-child>
 				</li>
 			</ul>
 		</div>
+		-->
 	</div>
 
 	<div class="col-md-4 col-md-offset-1">
@@ -22,6 +46,9 @@
 		</div>
 		<div class="col-md-11">
 			<demo-2-child [major]="majorVersion" [minor]="minorVersion"></demo-2-child>
+		</div>
+		<div class="col-md-11">
+			<demo-4-child></demo-4-child>
 		</div>
 	</div>
 
