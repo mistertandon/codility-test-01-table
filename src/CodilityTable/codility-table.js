@@ -27,7 +27,37 @@ class CodilityTable extends HTMLElement {
     }
     this.render();
   }
-  
+
+  getTableTheadTrTemplate() {
+    return `
+      <tr class='thead-row--container'>
+        <th class='thead-th--container'>
+          &nbsp;
+        </th>
+        ${this.table_data.headers
+          .map(
+            tableHeader => `<th class='thead-th--container'>${tableHeader}</th>`
+          )
+          .join('')}
+      </tr>`;
+  }
+
+  getTableTbodyTrTemplate() {
+    return `${Object.entries(this.table_data.data)
+      .map(([companyName, zipCodeArr]) => {
+        return `
+              <tr class='tbody-row--container'>
+                <th class='tbody-th--container'>${companyName}</th>
+                ${zipCodeArr
+                  .map(
+                    zipCode => `<td class='tbody-td--container'>${zipCode}</td>`
+                  )
+                  .join('')}
+              </tr>`;
+      })
+      .join('')}`;
+  }
+
   render() {
     const template = `
     <style>
@@ -38,25 +68,10 @@ class CodilityTable extends HTMLElement {
         <section class='section-table--container'>
           <table class='table--container'>
             <thead>
-              <tr class='thead-row--container'>
-                <th class='thead-th--container'>
-                  &nbsp;
-                </th>
-                ${this.table_data.headers
-                  .map(tableHeader => `<th class='thead-th--container'>${tableHeader}</th>`)
-                  .join('')}
-              </tr>
+                ${this.getTableTheadTrTemplate()}
             </thead>
             <tbody>
-              ${Object.entries(this.table_data.data)
-                .map(([companyName, zipCodeArr]) => {
-                  return `
-                  <tr class='tbody-row--container'>
-                    <th class='tbody-th--container'>${companyName}</th>
-                    ${zipCodeArr.map(zipCode => `<td class='tbody-td--container'>${zipCode}</td>`).join('')}
-                  </tr>`;
-                })
-                .join('')}
+              ${this.getTableTbodyTrTemplate()}
             </tbody>
           </table>
         </section>
