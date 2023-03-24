@@ -1,15 +1,12 @@
 import './style.scss';
+import './CodilityTable/codility-table';
 
-class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-  sayHello() {
-    console.log(
-      `Hello, my name is ${this.name} and I'm ${this.age} years old.`
-    );
-  }
-}
-const john = new Person('John', 3);
-john.sayHello(); // Output: "Hello, my name is John and I'm 30 years old."
+import { headersData } from './helper/headerData';
+console.log('headersData-outer', headersData);
+document.getElementById(
+  'codility-table--component'
+).innerHTML = `<codility-table table_data='${JSON.stringify(
+  headersData
+)}'></codility-table>`;
+
+// https://medium.com/swlh/web-components-with-shadow-dom-and-sass-f780ad23dd90

@@ -20,10 +20,28 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
-      {
+      // {
+      //   test: /\.scss$/,
+      //   use: ['style-loader', 'css-loader', 'sass-loader'],
+      // },
+
+
+  {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
+        use: [
+          'raw-loader',
+          {
+            loader:'sass-loader',
+            options: { 
+              sassOptions:{
+                includePaths: [path.resolve(__dirname, 'node_modules')]
+              }
+            }
+          }
+        ]  
+      }
+
+
     ],
   },
   devServer: {
