@@ -1,8 +1,11 @@
 .section-table--container {
+  width: 99%;
+  overflow-x: scroll;
+  border-right: 2px solid #d4d4d4;
+
   .table--container {
     background-color: #fafafa;
     border-collapse: collapse;
-    width: 100%;
   }
 
   tbody {
@@ -14,8 +17,29 @@
     }
   }
 
-  .tbody-row--container,
   .thead-row--container {
+    border-top: 2px solid #d4d4d4;
+    border-bottom: 2px solid #d4d4d4;
+  }
+
+  .thead-th--container {
+    background-color: #ededed;
+    border-left: 2px solid #d4d4d4;
+    border-right: 2px solid #d4d4d4;
+  }
+
+  .tbody-th--container {
+    background-color: #ededed;
+    border-left: 2px solid #d4d4d4;
+    border-right: 2px solid #d4d4d4;
+  }
+
+  .thead-row--container,
+  .tbody-th--container {
+    background-color: #ededed;
+  }
+
+  .tbody-row--container {
     border-bottom: 1px solid #d4d4d4;
     height: 45px;
   }
@@ -23,13 +47,13 @@
   .tbody-row--container {
     &:hover {
       background-color: #f0f0f5;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   }
 
   .thead-th--container,
   .tbody-th--container,
   .tbody-td--container {
-
     padding-top: 10px;
     padding-left: 5px;
     min-width: 100px;

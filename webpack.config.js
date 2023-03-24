@@ -20,28 +20,22 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
-      // {
-      //   test: /\.scss$/,
-      //   use: ['style-loader', 'css-loader', 'sass-loader'],
-      // },
-
-
-  {
+      {
         test: /\.scss$/,
         use: [
           'raw-loader',
           {
-            loader:'sass-loader',
-            options: { 
-              sassOptions:{
-                includePaths: [path.resolve(__dirname, 'node_modules')]
-              }
-            }
-          }
-        ]  
-      }
-
-
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                cache: false,
+                outputStyle: 'compressed',
+                includePaths: [path.resolve(__dirname, 'node_modules')],
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   devServer: {
@@ -59,6 +53,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src', 'index.html'),
+      inject: 'head', // or 'body'
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src', 'vendor.html'),

@@ -1,3 +1,4 @@
+import mainstyles from './../style.scss';
 import styles from './codility-table.scss';
 
 class CodilityTable extends HTMLElement {
@@ -50,7 +51,8 @@ class CodilityTable extends HTMLElement {
                 <th class='tbody-th--container'>${companyName}</th>
                 ${zipCodeArr
                   .map(
-                    zipCode => `<td class='tbody-td--container'>${zipCode}</td>`
+                    (zipCode, index) =>
+                      `<td class='tbody-td--container' title='${companyName}, ${this.table_data.headers[index]}'>${zipCode}</td>`
                   )
                   .join('')}
               </tr>`;
@@ -61,6 +63,7 @@ class CodilityTable extends HTMLElement {
   render() {
     const template = `
     <style>
+      ${mainstyles}
       ${styles}
     </style>
     <article class='codility-table--container'>
