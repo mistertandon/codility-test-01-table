@@ -1,5 +1,11 @@
-$primary-color: #FAFAFA;
+$primary-color: #fafafa;
 
 body {
   background-color: $primary-color;
+}
+
+.header--container {
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
 }
