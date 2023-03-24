@@ -3,7 +3,7 @@ import { sanitizeInput } from './sanitize';
 
 export let headersData = { headers: [], data: {} };
 
-const HEADERS_NUM = 20; 
+const HEADERS_NUM = 10; 
 
 Array.from({ length: HEADERS_NUM }).forEach(() => {
   headersData.headers.push(sanitizeInput(faker.name.firstName('male')));
